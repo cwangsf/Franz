@@ -129,6 +129,80 @@ python 3_stream_processing.py windowed
 - Windowed aggregations
 - Time-based event processing
 
+### Level 2.5: Advanced Producer and Consumer Patterns
+
+#### 6. Advanced Producer
+Demonstrates partitioning, key-based routing, batching, and message headers.
+
+```bash
+# Send messages with partition keys (same key → same partition)
+python 6_advanced_producer.py keys
+
+# Send messages with custom timestamps
+python 6_advanced_producer.py timestamps
+
+# Send messages with headers (metadata)
+python 6_advanced_producer.py headers
+
+# Send messages with automatic batching
+python 6_advanced_producer.py batches
+```
+
+**Concepts covered:**
+- Partition key assignment for ordering guarantees
+- Custom timestamps for event time tracking
+- Message headers for distributed tracing
+- Batching strategies for performance optimization
+- Compression options (gzip, snappy, lz4, zstd)
+
+#### 7. Consumer Groups and Advanced Consumption
+Demonstrates consumer groups, manual commits, partition assignment, and filtering.
+
+```bash
+# Consume as part of a consumer group
+python 7_consumer_groups.py group
+
+# Manual offset commits for error handling
+python 7_consumer_groups.py manual
+
+# Consume from a specific partition directly
+python 7_consumer_groups.py partition
+
+# Seek to a specific offset (replay messages)
+python 7_consumer_groups.py seek
+
+# Filter messages while consuming
+python 7_consumer_groups.py filter
+```
+
+**Concepts covered:**
+- Consumer groups and partition assignment
+- Manual vs. automatic offset commits
+- Direct partition access without consumer groups
+- Seeking and replaying messages
+- Message filtering and selective processing
+
+#### 8. Error Handling and Retry Logic
+Demonstrates robust error handling and retry strategies.
+
+```bash
+# Producer with retry logic and exponential backoff
+python 8_error_handling.py produce
+
+# Consumer with error handling and graceful failures
+python 8_error_handling.py consume
+
+# Producer with async callbacks
+python 8_error_handling.py callback
+```
+
+**Concepts covered:**
+- Retry logic with exponential backoff
+- Exception handling in producers and consumers
+- Async callbacks for non-blocking operations
+- Graceful degradation on errors
+- Max retry and error thresholds
+
 ### Level 3: Microservices Architecture
 
 This demonstrates a complete e-commerce system with multiple services communicating via Kafka.
