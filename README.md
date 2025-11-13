@@ -21,13 +21,13 @@ A comprehensive Python project to learn Apache Kafka from basics to advanced mic
 
 - Python 3.8+
 - Java 8+ (for running Kafka locally)
-- Kafka 2.13+ (for local installation)
+- Kafka 3.3+ with KRaft mode (Zookeeper not required)
 
 ## Installation
 
 ### 1. Install Kafka Locally
 
-#### Option A: Using Homebrew (macOS)
+#### Option A: Using Homebrew (macOS) - Recommended
 ```bash
 brew install kafka
 
@@ -45,12 +45,7 @@ tar -xzf kafka_2.13-3.x.x.tgz
 cd kafka_2.13-3.x.x
 ```
 
-**Start Zookeeper:**
-```bash
-bin/zookeeper-server-start.sh config/zookeeper.properties
-```
-
-**In another terminal, start Kafka broker:**
+**Start Kafka broker (with KRaft - no Zookeeper needed):**
 ```bash
 bin/kafka-server-start.sh config/server.properties
 ```
@@ -266,7 +261,7 @@ kafka-consumer-groups --bootstrap-server localhost:9092 \
 5. **Exactly-Once Semantics**: Implement idempotent producers
 6. **Schema Registry**: Use Avro or Protobuf for schema evolution
 7. **Kafka Streams**: Migrate stream processing to Kafka Streams library
-8. **Docker Compose**: Run Kafka in containers for easier setup
+8. **KRaft Cluster**: Set up a multi-node Kafka cluster with KRaft mode
 
 ## Resources
 
